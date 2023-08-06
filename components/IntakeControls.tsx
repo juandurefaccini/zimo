@@ -6,7 +6,7 @@ import { Play } from 'lucide-react';
 import { Plus } from 'lucide-react'
 import { Ban } from 'lucide-react'
 
-export default function IntakeControls({ triggerNewIntake }) {
+export default function IntakeControls({ triggerNewIntake }: any) {
     const [isIntakeStarted, setIsIntakeStarted] = useState(false) // Shows or not the intake record
 
     if (isIntakeStarted) {
