@@ -24,7 +24,7 @@ const showElapsedTime = (startDate: Date, endDate: Date) => {
   const end = dayjs(endDate)
   // Get minutes and seconds of duration
   const elapsedMinutes = start.diff(end, 'minutes')
-  return `${elapsedMinutes}`
+  return `${elapsedMinutes} min`
 }
 
 export default function IntakeRecord({ data }: IntakeRecordProps) {

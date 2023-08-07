@@ -8,21 +8,33 @@ import { Intake } from "@/types/intake"
 function Intake() {
   const [data, setData] = useState<Intake[]>([])
   // Save last time with useRef
-  const lastTime = useRef(new Date())
+  const startTime = useRef<Date | null>(null)
+
+  const handleStartIntake = () => {
+    startTime.current = new Date()
+  }
+
+  const handlePauseIntake = () => {
+    handleIntakePush()
+  }
 
   const handleIntakePush = () => {
+    console.log(startTime.current)
     const newRecord: Intake = {
-      start: lastTime.current,
+      start: startTime.current as Date, // Will never be null here
       end: new Date(),
     }
-    lastTime.current = newRecord.end
+    startTime.current = null
     // Push new Record to data
     setData([...data, newRecord])
   }
 
   return (
     <div className="w-full flex flex-col justify-center">
-      <IntakeControls triggerNewIntake={() => handleIntakePush()} />
+      <IntakeControls
+        handleStartIntake={() => handleStartIntake()}
+        handlePauseIntake={() => handlePauseIntake()}
+      />
       <IntakeRecord data={data} />
     </div>
   )

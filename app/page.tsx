@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge'
 function HomeWelcomeTitle() {
   return (
     <>
-      <h1 className="text-4xl font-bold text-center tracking-tight">
+      <h1 className="text-3xl font-bold text-center tracking-tight">
         🍼 Zimo 🍼
       </h1>
     </>
@@ -16,7 +16,7 @@ function HomeWelcomeTitle() {
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-center p-5 w-screen'>
+    <main className='flex min-h-screen flex-col items-center p-5 w-screen'>
       <div className='flex-none'>
         <HomeWelcomeTitle />
       </div>
